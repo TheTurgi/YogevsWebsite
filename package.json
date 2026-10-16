@@ -1,0 +1,5 @@
+{
+  "name": "yogev-memorial",
+  "private": true,
+  "dependencies": { "@netlify/blobs": "latest" }
+}
