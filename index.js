@@ -172,6 +172,22 @@
   setInterval(function () { if (!document.hidden) loadCount(); }, 10000);
   document.addEventListener('visibilitychange', function () { if (!document.hidden) loadCount(); });
 
+  /* wrap every "Yogev" / "יוגב" so the candle can warm it up */
+  function glowNames(root) {
+    var test = /יוגב|Yogev/, list = [], n, w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    while ((n = w.nextNode())) {
+      if (test.test(n.nodeValue) && !(n.parentNode.closest && n.parentNode.closest('.yn,script,style'))) list.push(n);
+    }
+    list.forEach(function (node) {
+      var f = document.createDocumentFragment();
+      node.nodeValue.split(/(יוגב|Yogev)/).forEach(function (part, i) {
+        if (i % 2) { var sp = document.createElement('span'); sp.className = 'yn'; sp.textContent = part; f.appendChild(sp); }
+        else if (part) f.appendChild(document.createTextNode(part));
+      });
+      node.parentNode.replaceChild(f, node);
+    });
+  }
+
   /* ================= language ================= */
   $('#langBtn').onclick = function () {
     buzz(); lang = lang === 'he' ? 'en' : 'he'; store.set('lang', lang);
