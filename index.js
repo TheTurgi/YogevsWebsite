@@ -31,32 +31,19 @@
      To show a person's full words, add  full:{he:'...',en:'...'}  to their entry:
      the back of the card then shows that text instead of the Yizkor link. */
   var HERO = { q: { he: 'האח הכי טוב שיכולתי לבקש', en: 'The best brother I could have asked for' }, by: { he: 'נועם, אחיו', en: 'Noam, his brother' } };
- var E = [
-  { w: { he: 'נועם', en: 'Noam' }, r: { he: 'אחיו הצעיר', en: 'His Younger Brother' }, s: { he: 'ספד לו כחבר הכי טוב, כחצי שלו וכנפש תאומה. נזכר באדם שתמיד הציב רף גבוה, ובאיך חינך אותו לאהבת הארץ, ואמר שיוגב ימשיך לחיות איתו לנצח.', en: 'Remembered him as his best friend, his other half and a twin soul. Spoke of a man who always set the bar high and taught him to love the land, and said Yogev will live on with him forever.' } },
-  { w: { he: 'שקד', en: 'Shaked' }, r: { he: 'חבר', en: 'Friend' }, s: { he: 'חבר קרוב מתקופת השליחות. נזכר ביוגב כמי שהיה תמיד בטוח באמת שלו, ואמר שיוגב היה רוצה שיהיו גאים בו ולא עצובים.', en: 'A close friend from the shlichut year. Remembered Yogev as always sure of his truth, and said Yogev would have wanted them proud rather than sad.' } },
-  { w: { he: 'בילי', en: 'Billi' }, r: { he: 'חברה של המשפחה', en: 'A friend of the family' }, s: { he: 'יוגב אני לא מאמינה שאני צריכה להדליק עבורך נר זיכרון . תמיד תישאר בליבי ובכל כוחי אנסה למלא את צוואתך אוהבת ומתגעגעת', en: 'Yogev I cannot believe I have to light a memorial candle for you . You will always remain in my heart and with all my strength I will try to fulfill your legacy loving and missing you' } },
-  { w: { he: 'מאיקי', en: 'Maiki' }, r: { he: 'חברתו הטובה', en: 'His dear friend' }, s: { he: 'יופף שלי, החתיך והמקסים, לראות את התמונות שלך כל פעם שובר לי את הלב. אבל אל תדאג, אני ממשיכה הכל בידיוק כמו שרצית. אני מתגעגעת אלייך. כל כך הרבה.', en: 'My Yogev, handsome and charming, seeing your photos breaks my heart every time. But do not worry, I am continuing everything exactly as you wanted. I miss you. So much.' } },
-  { w: { he: 'ירין טורג\'מן', en: 'Yarin Turgeman' }, r: { he: 'חניך של יוגב', en: 'His former scouter' }, s: { he: 'אתגעגע אליך מלא אחי! המדריך שלי לנצח', en: 'I will miss you so much my brother! My counselor forever' } },
-  { w: { he: 'איילין בר יוסף', en: 'Eileen Bar Yosef' }, r: { he: 'שכנתו', en: 'His neighbor' }, s: { he: 'יוגב שלנו, ילד יקר ואהוב לא נתפס שאתה לא איתנו החיוך המקסים שלך נעלם. מתגעגעים אליך מאוד, לנצח תישאר בליבנו', en: 'Our Yogev, dear and beloved child, it is incomprehensible that you are not with us, your charming smile is gone. Missing you very much, you will remain in our hearts forever' } },
-  { w: { he: 'צאלה', en: 'Tzeela' }, r: { he: 'המורה שלו', en: 'His Teacher' }, s: { he: 'להדליק לזכרך כואב לי בעצמות. כל כך הרבה זמן לא באת לבקר וזה כבר מרגיש כל כך חסר. שיהיה זכרך ברור. אנסה לעשות הכל כדי להיות ראויה', en: 'Lighting a candle in your memory hurts down to my bones. It has been so long since you came to visit and it already feels like such a void. May your memory be blessed. I will try to do everything to be worthy' } },
-  { w: { he: 'צפריר', en: 'Tzafrir' }, r: { he: 'דודו', en: 'His Uncle' }, s: { he: 'תיאר אותו כמי שהחיוך שלו הולך איתו לכל מקום.', en: 'Described him as someone whose smile went with him everywhere.' } },
-  { w: { he: 'עמיר', en: 'Amir' }, r: { he: 'מתוך אתר יזכור', en: 'From The Yizkor Website' }, s: { he: 'יהי זכרך ברוך.', en: 'May your memory be a belssing' } },
-  { w: { he: 'רוני', en: 'Roni' }, r: { he: 'מתוך אתר יזכור', en: 'From The Yizkor Website' }, s: { he: 'תודה שהיית, עדיין לא נקלט שאתה לא בין החיים, גיבור.', en: 'Thank you for being here, it still hasnt sunk in that you are no longer among the living, hero.' } },
-  { w: { he: 'רן', en: 'Ran' }, r: { he: 'מתוך אתר יזכור', en: 'From The Yizkor Website' }, s: { he: 'המכתב המרגש שלך הוא עדות לאובדן הגדול של עם ישראל, יהיה זכרך ברוך גיבור ישראל.', en: 'Your touching letter is a testament to the great loss of the people of Israel. May your memory be blessed, hero of Israel.' } },
-  { w: { he: 'יהל דאנה', en: 'Yahel Dana' }, r: { he: 'מתוך אתר יזכור', en: 'From The Yizkor Website' }, s: { he: 'לנצח אנצור בליבי זכרך,גיבור ישראל שנלחם על הגנת מולדתי.', en: 'I will forever treasure your memory in my heart, hero of Israel who fought to defend my homeland.' } },
-  { w: { he: 'עידן בלום', en: 'Idan Blum' }, r: { he: 'מתוך אתר יזכור', en: 'From The Yizkor Website' }, s: { he: 'היי יוגב זה התלמיד שלך לשעבר אולי אתה מסתכל עליי מלמעלה ורואה איך גדלתי. רק רציתי שתדע כמה השפעת עליי בכמה ימים שהיית מורה מחליף אצלי בכיתה הייתה לך דרך לימוד מיוחדת וכל הכיתה אהבה את זה ובמיוחד אני ואגב אני עדיין זוכר את "החנוכייה של סבא" בעל פה וזה בזכותך ואגב לגבי מה שאני ואיתן עשינו בקבר שלך אני מקווה שתסלח לנו על זה היינו פשוט צריכים את הגפרורים. תודה שהיית בחיים שלי ותהנה שם למעלה', en: 'Hey Yogev, it is your former student. Maybe you are looking down at me from above and seeing how I have grown. I just wanted you to know how much of an impact you had on me in the few days you were a substitute teacher in my class. You had a special way of teaching and the whole class loved it, especially me. By the way, I still remember "Grandpa Menorah" by heart and that is thanks to you. Also, regarding what Eitan and I did at your grave, I hope you will forgive us for that, we just needed the matches. Thank you for being in my life, and enjoy it up there.' } },
-  { w: { he: 'בן יעקב', en: 'Ben Yaakov' }, r: { he: 'מתוך אתר יזכור', en: 'From The Yizkor Website' }, s: { he: 'יוגב היקר מלח הארץ זוכרים אותך כל יום', en: 'Dear Yogev, salt of the earth, we remember you every day.' } },
-  { w: { he: 'אלית טל', en: 'Elit Tal' }, r: { he: 'מתוך אתר יזכור', en: 'From The Yizkor Website' }, s: { he: 'יהי זכרך ברוך גיבור ישראל אמיץ. תודה שהגנת עלינו. לא נשכח ולא נסלח. הי"ד.', en: 'May your memory be blessed, brave hero of Israel. Thank you for protecting us. We will not forget and we will not forgive. May God avenge his blood.' } },
-  { w: { he: 'איילה תם צור', en: 'Ayala Tam Tzur' }, r: { he: 'מתוך אתר יזכור', en: 'From The Yizkor Website' }, s: { he: 'כשבן נקרע מאימו זה שברון לב שאינו ניתן לאיחוי. לא הכרתי אותך אישית אני בטוחה שהיית ילד ערכי ואהוב. חיותה יקרה, הלב איתך.', en: 'When a son is torn from his mother, it is a heartbreak that cannot be mended. I did not know you personally, but I am certain you were a loving child with strong values. Dear Chayuta, my heart goes out to you.' } },
-  { w: { he: 'שרית', en: 'Sarit' }, r: { he: 'מתוך אתר יזכור', en: 'From The Yizkor Website' }, s: { he: 'יוגבי אתה חסר....עדיין לא מסוגלת לדבר עלייך בלשון עבר. חסרה לי הקריאה שלך....ברקוביץ', en: 'Yogevi you are missed....still unable to speak about you in past tense. I miss your call....Berkowitz' } },
-  { w: { he: 'עפרה', en: 'Ofra' }, r: { he: 'מתוך אתר יזכור', en: 'From The Yizkor Website' }, s: { he: 'תודה לך,יוגב היקר, על שהגנת עלינו , במחיר ההקרבה הנוראה מכל. תנחומים מלב כואב לכל משפחתך. יהא זכרך ברוך,גיבור ישראל', en: 'Thank you, dear Yogev, for protecting us, at the cost of the most terrible sacrifice of all. Condolences from an aching heart to all your family. May your memory be blessed, hero of Israel' } },
-  { w: { he: 'ליזה וולף', en: 'Liza Wolf' }, r: { he: 'מתוך אתר יזכור', en: 'From The Yizkor Website' }, s: { he: 'מתגעגעים יקר יוגבי', en: 'Missing you dear Yogevi' } },
-  { w: { he: 'אתי יעקב', en: 'Eti Yaakov' }, r: { he: 'מתוך אתר יזכור', en: 'From The Yizkor Website' }, s: { he: 'גיבור ישראל.....יהי זכרך ברוך.....', en: 'Hero of Israel.....May your memory be blessed.....' } },
-  { w: { he: 'טליה שמיר', en: 'Talia Shamir' }, r: { he: 'מתוך אתר יזכור', en: 'From The Yizkor Website' }, s: { he: 'חבר ילדות שלי המלאך הכי יפה בגן עדן וההפסד הכי גדול שיש למדינה אוהבים אותך תודה על מי שהיית', en: 'My childhood friend the most beautiful angel in heaven and the greatest loss for the country we love you thank you for who you were' } },
-  { w: { he: 'בנימין קליין', en: 'Benjamin Klein' }, r: { he: 'מתוך אתר יזכור', en: 'From The Yizkor Website' }, s: { he: 'משפחת פזי היקרה, שמי שמך, ואני תלמיד מלוס אנגלס. ברצוני להביע את תנחומיי הכנים על אובדנו של יוגב ז"ל. יוגב היה דמות מעוררת השראה, לוחם אמיץ ואדם אהוב. אנו נזכור את תרומתו ואת הערכים עליהם עמד. אנו מעריכים את הקרבתו למען עם ישראל, ואני מאחל שנשמתו תעלה מעלה ותנוח בשלום. אנו שולחים לכם חיבוק חם ומאחלים לכם כוח ונחמה. בנימין קליין', en: 'Dear Pazy family, my name is your name, and I am a student from Los Angeles. I would like to express my sincere condolences on the loss of Yogev, may his memory be blessed. Yogev was an inspiring figure, a brave warrior, and a beloved person. We will remember his contribution and the values he stood for. We appreciate his sacrifice for the people of Israel, and I wish that his soul may ascend above and rest in peace. We send you a warm hug and wish you strength and comfort. Benjamin Klein' } },
-  { w: { he: 'יסמין קופרשטיין', en: 'Yasmin Kuperstein' }, r: { he: 'מתוך אתר יזכור', en: 'From The Yizkor Website' }, s: { he: 'נשמתך בגן עדן ילד אהוב', en: 'May your soul be in heaven beloved child' } },
-  { w: { he: 'נורית', en: 'Nurit' }, r: { he: 'מתוך אתר יזכור', en: 'From The Yizkor Website' }, s: { he: 'יוגב זוכרת אותך כילד בגן בשנתך האחרונה נכנסתי באמצע השנה להיות סייעת שלכם החיוך הכובש שלך בלתי נשכח אוהבת', en: 'Yogev I remember you as a child in kindergarten in your last year I joined in the middle of the year to be your assistant teacher your captivating smile is unforgettable with love' } }
-];
+  var E = [
+    { w: { he: 'נועם', en: 'Noam' }, r: { he: 'אח', en: 'Brother' },
+      s: { he: 'ספד לו כחבר הכי טוב, כחצי שלו וכנפש תאומה. נזכר באדם שתמיד הציב רף גבוה, ובאיך חינך אותו לאהבת הארץ, ואמר שיוגב ימשיך לחיות איתו לנצח.',
+           en: 'Remembered him as his best friend, his other half and a twin soul. Spoke of a man who always set the bar high and taught him to love the land, and said Yogev will live on with him forever.' } },
+    { w: { he: 'שקד', en: 'Shaked' }, r: { he: 'חבר', en: 'Friend' },
+      s: { he: 'חבר קרוב מתקופת השליחות. נזכר ביוגב כמי שהיה תמיד בטוח באמת שלו, ואמר שיוגב היה רוצה שיהיו גאים בו ולא עצובים.',
+           en: 'A close friend from the shlichut year. Remembered Yogev as always sure of his truth, and said Yogev would have wanted them proud rather than sad.' } },
+    { w: { he: 'צפריר', en: 'Tzafrir' }, r: { he: 'דוד', en: 'Uncle' },
+      s: { he: 'תיאר אותו כמי שהחיוך שלו הולך איתו לכל מקום.', en: 'Described him as someone whose smile went with him everywhere.' } },
+    { w: { he: 'ידידתו', en: 'A friend' }, r: { he: 'חברה', en: 'Friend' },
+      s: { he: 'תיארה אדם שהיה מלא בכל דבר שעשה, ושתמיד היה מוכן ללמוד מכל מי שפגש בדרך.',
+           en: 'Described a man who gave himself fully to everything he did, and was always ready to learn from everyone he met.' } }
+  ];
 
   var LETTER = {
     he: ['מכתב לאהובתי / יוגב פזי',
@@ -85,7 +72,7 @@
     (page === 'choice' ? '<div class="menu-photo"><img src="Images/YOGEVbg.jpg" alt="" data-depth="10"></div>' : '') +
     '<div id="candleGlow" aria-hidden="true"></div>' +
     '<header id="bar">' + back + '<span class="spacer"></span>' +
-    '<button id="candleBtn" class="chip" aria-pressed="false"><svg viewBox="0 0 24 24" width="20" height="20"><path class="flame" d="M12 2c2 3 4 4.8 4 7.5a4 4 0 0 1-8 0C8 7 10 6 10.5 4 11.3 4.8 12 5 12 2z" fill="currentColor"/><rect x="9" y="14" width="6" height="8" rx="1.5" fill="currentColor"/></svg><span class="ctxt" data-i="lightCandle"></span></button>' +
+    '<div class="candlegrp"><button id="candleBtn" class="chip" aria-pressed="false"><svg viewBox="0 0 24 24" width="20" height="20"><path class="flame" d="M12 2c2 3 4 4.8 4 7.5a4 4 0 0 1-8 0C8 7 10 6 10.5 4 11.3 4.8 12 5 12 2z" fill="currentColor"/><rect x="9" y="14" width="6" height="8" rx="1.5" fill="currentColor"/></svg><span class="ctxt" data-i="lightCandle"></span></button><span id="candleCount" class="ccount" role="status" hidden><i class="live"></i><b></b></span></div>' +
     '<button id="langBtn" class="chip" aria-label="Language"><span id="langTxt"></span></button></header>' +
     '<div id="toast" role="status"></div>';
   while (wrap.firstChild) document.body.insertBefore(wrap.firstChild, stage);
@@ -142,51 +129,48 @@
   if (!reduce) { tx = 0.0001; kick(); }
 
   /* ================= candle ================= */
-  function setCandle(on) { document.body.classList.toggle('candle', on); $('#candleBtn').setAttribute('aria-pressed', on); store.set('candle', on ? '1' : '0'); }
+  function setCandle(on) { document.body.classList.toggle('candle', on); $('#candleBtn').setAttribute('aria-pressed', on); store.set('candle', on ? '1' : '0'); if (on) store.set('candleOn', new Date().toDateString()); }
   $('#candleBtn').onclick = function () {
     buzz(); var on = !document.body.classList.contains('candle'); setCandle(on); if (on) lightRemote();
   };
 
-  setCandle(store.get('candle') === '1');
+  setCandle(store.get('candle') === '1' && store.get('candleOn') === new Date().toDateString());
 
   /* ================= candle counter (Netlify Function /api/candles) ================= */
-  var API = '/api/candles', cnt = null;
+  var API = '/api/candles', cnt = null, shown = null, lastLit = 0;
+  function fmt(n) { return n.toLocaleString(lang === 'he' ? 'he-IL' : 'en-US'); }
   function showCount() {
-    var el = $('#candleLine'); if (!el || cnt == null) return;
-    var old = el.getAttribute('data-n');
-    el.hidden = false; el.setAttribute('data-n', cnt);
-    el.innerHTML = '<b>' + cnt.toLocaleString(lang === 'he' ? 'he-IL' : 'en-US') + '</b>' + t('candles');
-    if (old !== null && +old !== cnt) el.firstChild.classList.add('bump');
+    if (cnt == null) return;
+    var changed = shown !== null && shown !== cnt; shown = cnt;
+    var box = $('#candleCount');
+    if (box) {
+      var b = box.querySelector('b'); box.hidden = false; b.textContent = fmt(cnt);
+      box.title = fmt(cnt) + ' ' + t('candles'); box.setAttribute('aria-label', box.title);
+      if (changed) { b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump'); }
+    }
+    var el = $('#candleLine');
+    if (el) { el.hidden = false; el.innerHTML = '<b>' + fmt(cnt) + '</b>' + t('candles'); }
   }
   function loadCount() {
     fetch(API, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : Promise.reject(); })
-      .then(function (d) { cnt = d.count; showCount(); }).catch(function () {});
+      .then(function (d) {
+        if (typeof d.count !== 'number') return;
+        if (Date.now() - lastLit < 8000 && cnt != null && d.count < cnt) return; // ignore a slightly stale cached answer
+        cnt = d.count; showCount();
+      }).catch(function () {});
   }
   function lightRemote() {            // one counted candle per device per day
     var day = new Date().toDateString();
     if (store.get('litDay') === day) return;
-    store.set('litDay', day);
+    store.set('litDay', day); lastLit = Date.now();
+    if (cnt != null) { cnt++; showCount(); }   // instant feedback, replaced by the server's number
     fetch(API, { method: 'POST' }).then(function (r) { return r.json(); }).then(function (d) {
-      if (d && d.count != null) { cnt = d.count; showCount(); toast(t('lit')); }
-    }).catch(function () { store.set('litDay', ''); });
+      if (d && typeof d.count === 'number') { cnt = d.count; showCount(); if (!d.limited) toast(t('lit')); }
+    }).catch(function () { store.set('litDay', ''); loadCount(); });
   }
-  if (page === 'choice') { loadCount(); setInterval(function () { if (!document.hidden) loadCount(); }, 45000); }
-
-  /* wrap every "Yogev" / "יוגב" so the candle can warm it up */
-  function glowNames(root) {
-    var test = /יוגב|Yogev/, list = [], n, w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
-    while ((n = w.nextNode())) {
-      if (test.test(n.nodeValue) && !(n.parentNode.closest && n.parentNode.closest('.yn,script,style'))) list.push(n);
-    }
-    list.forEach(function (node) {
-      var f = document.createDocumentFragment();
-      node.nodeValue.split(/(יוגב|Yogev)/).forEach(function (part, i) {
-        if (i % 2) { var sp = document.createElement('span'); sp.className = 'yn'; sp.textContent = part; f.appendChild(sp); }
-        else if (part) f.appendChild(document.createTextNode(part));
-      });
-      node.parentNode.replaceChild(f, node);
-    });
-  }
+  loadCount();                         // "live": refresh every 10s while the page is open and visible
+  setInterval(function () { if (!document.hidden) loadCount(); }, 10000);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) loadCount(); });
 
   /* ================= language ================= */
   $('#langBtn').onclick = function () {
@@ -201,6 +185,7 @@
     $('#langTxt').textContent = t('lang');
     var bk = $('#backBtn'); if (bk) bk.setAttribute('aria-label', t('back'));
     if (R[page]) R[page]();
+    showCount();
     glowNames(stage);
   }
 
